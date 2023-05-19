@@ -9,6 +9,7 @@ class BahanMasuk extends Model
 {
     use HasFactory;
 
+    protected $table = "bahan_masuk";
     protected $fillable = [
         'tgl',
         'no_lp',
