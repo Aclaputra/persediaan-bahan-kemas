@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class BahanMasuk extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'tgl',
+        'no_lp',
+        'nama_pemasok',
+        'no_analisa',
+        'jumlah'
+    ];
 }
