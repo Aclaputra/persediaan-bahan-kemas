@@ -9,9 +9,10 @@
 </head>
 <body>
     <h1>Login page</h1>
-    <form action="POST">
+    <form action="{{ route('login') }}" method="post">
         <label for="email">Email address</label>
         <input type="email">
+        <br><br>
         <label for="password">Password</label>
         <input type="password">
     </form>

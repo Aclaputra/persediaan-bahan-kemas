@@ -18,8 +18,8 @@ Route::get('/welcome', function () {
 
 Route::get('/', function () {
     return view('home');
-});
+})->middleware(['auth','is.active']);
 
 Route::get('/login', function () {
    return view('login');
-});
+})->name('login');
