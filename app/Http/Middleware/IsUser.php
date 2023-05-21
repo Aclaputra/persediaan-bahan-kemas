@@ -21,6 +21,6 @@ class IsUser
             return redirect('/admin')->with('error', 'Bukan tempatnya admin');
         }
 
-        return redirect('/login')->with('error', 'Kamu tidak memiliki akses ');
+        return redirect('/login')->with('error', 'Kamu tidak memiliki akses');
     }
 }
