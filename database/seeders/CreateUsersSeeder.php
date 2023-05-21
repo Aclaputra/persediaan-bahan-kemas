@@ -18,35 +18,35 @@ class CreateUsersSeeder extends Seeder
             [
                 'name'=>'Admin',
                 'email'=>'admin@gmail.com',
-                'is_admin'=>'1',
+                'role'=>'admin',
                 'password'=> bcrypt('123456'),
             ],
             [
                 'name'=>'aclaputra',
                 'email'=>'acla@gmail.com',
-                'is_admin'=>'0',
+                'role'=>'user',
                 'password'=> bcrypt('123456'),
             ],
             [
                 'name'=>'myrakarimah',
                 'email'=>'myra@gmail.com',
-                'is_admin'=>'0',
+                'role'=>'user',
                 'password'=> bcrypt('123456'),
             ],
             [
                 'name'=>'alcaumaru',
                 'email'=>'alca@gmail.com',
-                'is_admin'=>'0',
+                'role'=>'user',
                 'password'=> bcrypt('123456'),
             ],
             [
                 'name'=>'yosafat',
                 'email'=>'yosafat@gmail.com',
-                'is_admin'=>'0',
+                'role'=>'user',
                 'password'=> bcrypt('123456'),
             ],
         ];
-  
+
         foreach ($user as $key => $value) {
             User::create($value);
         }
