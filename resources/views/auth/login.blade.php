@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="container bg-dark rounded-pill d-flex shadow-lg opacity-75">
+        <div class="container bg-dark rounded-circle d-flex shadow-lg opacity-75">
             <div class="container p-4 m-lg-5 text-dark">
                 <div class="card-header d-flex flex-column">
                     <img class="mx-auto" src="{{asset('/img/shiba.png')}}" alt="">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
                     </div>
                     <button type="submit" class="btn btn-success mb-4">Submit</button>
                 </form>
