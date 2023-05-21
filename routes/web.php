@@ -17,8 +17,8 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', function () {
-    return view('home');
-})->middleware(['auth','is.active']);
+    return redirect('/login');
+});
 
 Route::get('/login', function () {
    return view('login');
@@ -26,4 +26,10 @@ Route::get('/login', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->middleware(['auth','is.user'])
+    ->name('home');
+
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])
+    ->middleware(['auth','is.admin'])
+    ->name('admin');

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsActive
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,10 @@ class IsActive
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->user()->is_admin) {
-            return response()->json("Akunmu tidak memiliki akses untuk masuk");    
+        if (auth()->user()->role == "admin") {
+            return $next($request);
         }
-        
-        return $next($request);
+
+        return redirect('/login')->with('error', 'Kamu tidak memiliki akses admin');
     }
 }
