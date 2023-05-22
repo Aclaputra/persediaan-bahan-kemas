@@ -24,7 +24,7 @@
                 <a href="/" class="text-center align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span class="fst-italic text-secondary">PT. SHIBA SUKSES SEJAHTERA</span>
                     <hr>
-                    <span class="fw-bold fs-5 d-none d-sm-inline text-secondary fst-italic">{{ config('app.name', 'Laravel') }}</span>
+                    <span class="fs-6 d-none d-sm-inline text-secondary fst-italic">{{ config('app.name', 'Laravel') }}</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
 {{--                    home--}}
@@ -100,8 +100,63 @@
                 </div>
             </div>
         </div>
-        <div class="col py-3 bg-light">
-            <h1>User Dashboard</h1>
+        <div class="col py-3 bg-dark text-light">
+            <span class="text-secondary">User > Dashboard</span>
+            <div class="container d-flex">
+                <div class="container bg-secondary rounded row m-4">
+                    <div class="p-4 row">
+                        <span class="fw-bold fs-4">Total Bahan Kemas</span>
+                        <span>100</span>
+                    </div>
+
+                </div>
+                <div class="container bg-secondary rounded row m-4">
+                    <div class="p-4 row">
+                        <span class="fw-bold fs-4">Total Bahan Kemas</span>
+                        <span>100</span>
+                    </div>
+
+                </div>
+                <div class="container bg-secondary rounded row m-4">
+                    <div class="p-4 row">
+                        <span class="fw-bold fs-4">Total Bahan Kemas</span>
+                        <span>100</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <table class="table text-light">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

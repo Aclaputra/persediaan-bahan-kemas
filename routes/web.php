@@ -35,7 +35,9 @@ Route::controller(AdminController::class)
     ->group(function () {
         Route::get('/', 'index')
             ->name('dashboard');
-        Route::get('/settings', 'setting')
-            ->name('setting');
+        Route::prefix('settings')->group(function() {
+            Route::get('/settings', 'setting')
+                ->name('setting');
+        });
     });
 
