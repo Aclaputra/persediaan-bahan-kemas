@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,24 +14,28 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/welcome', function () {
-   return view('welcome');
-});
-
-Route::get('/', function () {
-    return redirect('/login');
-});
-
-Route::get('/login', function () {
-   return view('login');
-})->name('login');
+Route::redirect('/', 'login',301);
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+Route::controller(HomeController::class)
+    ->prefix('home')
+    ->as('home.')
     ->middleware(['auth','is.user'])
-    ->name('home');
+    ->group(function () {
+        Route::get('/', 'index')
+            ->name('dashboard');
+        Route::get('/settings', 'setting')
+            ->name('setting');
+    });
 
-Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])
+Route::controller(AdminController::class)
+    ->prefix('admin')
+    ->as('admin.')
     ->middleware(['auth','is.admin'])
-    ->name('admin');
+    ->group(function () {
+        Route::get('/', 'index')
+            ->name('dashboard');
+        Route::get('/settings', 'setting')
+            ->name('setting');
+    });
+
