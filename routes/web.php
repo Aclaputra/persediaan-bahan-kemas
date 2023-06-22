@@ -38,8 +38,10 @@ Route::controller(AdminController::class)
         Route::get('/', 'index')
             ->name('dashboard');
         Route::prefix('settings')->group(function() {
-            Route::get('/settings', 'setting')
+            Route::get('/', 'setting')
                 ->name('setting');
+            Route::get('/profile', 'profile')
+                ->name('profile');
         });
     });
 
