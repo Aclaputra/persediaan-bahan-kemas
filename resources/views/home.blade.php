@@ -104,22 +104,22 @@
             <span class="text-secondary">User > Dashboard</span>
             <div class="container d-flex">
                 <div class="container bg-secondary rounded row m-4">
-                    <div class="p-4 row">
-                        <span class="fw-bold fs-4">Total Bahan Kemas</span>
+                    <div class="p-2 row">
+                        <span class="fw-bold fs-5">Total Bahan Kemas</span>
                         <span>100</span>
                     </div>
 
                 </div>
                 <div class="container bg-secondary rounded row m-4">
-                    <div class="p-4 row">
-                        <span class="fw-bold fs-4">Total Bahan Kemas</span>
+                    <div class="p-2 row">
+                        <span class="fw-bold fs-5">Total Bahan Kemas</span>
                         <span>100</span>
                     </div>
 
                 </div>
                 <div class="container bg-secondary rounded row m-4">
-                    <div class="p-4 row">
-                        <span class="fw-bold fs-4">Total Bahan Kemas</span>
+                    <div class="p-2 row">
+                        <span class="fw-bold fs-5">Total Bahan Kemas</span>
                         <span>100</span>
                     </div>
 

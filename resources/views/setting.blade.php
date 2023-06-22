@@ -102,6 +102,7 @@
         </div>
         <div class="col py-3 bg-light">
             <h1>User Dashboard</h1>
+            <p>setting Page</p>
         </div>
     </div>
 </div>
