@@ -9,11 +9,12 @@ class KartuPersediaan extends Model
 {
     use HasFactory;
 
-    protected $table = "kartu_persediaan";
+    protected $table = 'kartu_persediaan';
+
     protected $fillable = [
         'nama_produk',
         'kode_produk',
         'satuan',
-        'keterangan'
+        'keterangan',
     ];
 }

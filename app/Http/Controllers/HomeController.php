@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -26,13 +24,13 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
-    public function setting() {
+    public function setting()
+    {
         return view('setting');
     }
 
-    public function profile() {
+    public function profile()
+    {
         return view('profile');
     }
-
-
 }

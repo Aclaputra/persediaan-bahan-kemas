@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class CreateUsersSeeder extends Seeder
 {
@@ -14,36 +14,36 @@ class CreateUsersSeeder extends Seeder
      */
     public function run()
     {
-      $user = [
+        $user = [
             [
-                'name'=>'Admin',
-                'email'=>'admin@gmail.com',
-                'role'=>'admin',
-                'password'=> bcrypt('123456'),
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'role' => 'admin',
+                'password' => bcrypt('123456'),
             ],
             [
-                'name'=>'aclaputra',
-                'email'=>'acla@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'name' => 'aclaputra',
+                'email' => 'acla@gmail.com',
+                'role' => 'user',
+                'password' => bcrypt('123456'),
             ],
             [
-                'name'=>'myrakarimah',
-                'email'=>'myra@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'name' => 'myrakarimah',
+                'email' => 'myra@gmail.com',
+                'role' => 'user',
+                'password' => bcrypt('123456'),
             ],
             [
-                'name'=>'alcaumaru',
-                'email'=>'alca@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'name' => 'alcaumaru',
+                'email' => 'alca@gmail.com',
+                'role' => 'user',
+                'password' => bcrypt('123456'),
             ],
             [
-                'name'=>'yosafat',
-                'email'=>'yosafat@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'name' => 'yosafat',
+                'email' => 'yosafat@gmail.com',
+                'role' => 'user',
+                'password' => bcrypt('123456'),
             ],
         ];
 
