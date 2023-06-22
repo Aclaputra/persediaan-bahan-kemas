@@ -19,31 +19,31 @@ class CreateUsersSeeder extends Seeder
                 'name'=>'Admin',
                 'email'=>'admin@gmail.com',
                 'role'=>'admin',
-                'password'=> bcrypt('123456'),
+                'password'=> bcrypt('password'),
             ],
             [
                 'name'=>'aclaputra',
                 'email'=>'acla@gmail.com',
                 'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'password'=> bcrypt('password'),
             ],
             [
-                'name'=>'myrakarimah',
-                'email'=>'myra@gmail.com',
+                'name'=>'dipesh malvia',
+                'email'=>'dipesh@gmail.com',
                 'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'password'=> bcrypt('password'),
             ],
             [
                 'name'=>'alcaumaru',
                 'email'=>'alca@gmail.com',
                 'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'password'=> bcrypt('password'),
             ],
             [
                 'name'=>'yosafat',
                 'email'=>'yosafat@gmail.com',
                 'role'=>'user',
-                'password'=> bcrypt('123456'),
+                'password'=> bcrypt('password'),
             ],
         ];
 
