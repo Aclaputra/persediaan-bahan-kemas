@@ -24,10 +24,12 @@ Route::controller(HomeController::class)
     ->group(function () {
         Route::get('/', 'index')
             ->name('dashboard');
-        Route::get('/settings', 'setting')
+        Route::prefix('settings')->group(function() {
+            Route::get('/', 'setting')
             ->name('setting');
-        Route::get('/profile', 'profile')
+            Route::get('/profile', 'profile')
             ->name('profile');  
+        });
     });
 
 Route::controller(AdminController::class)
