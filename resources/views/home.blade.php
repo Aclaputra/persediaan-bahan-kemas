@@ -46,12 +46,12 @@
                             </li>
                         </ul>
                     </li>
-{{--                    orders--}}
+                    {{-- orders--}}
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Orders</span></a>
                     </li>
-{{--                    proucts--}}
+                    {{-- proucts--}}
                     <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-grid text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Products</span> </a>
@@ -70,14 +70,14 @@
                             </li>
                         </ul>
                     </li>
-{{--                    customers--}}
+                    {{-- customers--}}
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-people text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Customers</span> </a>
                     </li>
                 </ul>
                 <hr>
-{{--                dropdown akun--}}
+                {{-- dropdown akun--}}
                 <div class="dropdown pb-4">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://businesscasecompetition.files.wordpress.com/2019/04/icon-user.png" alt="hugenerd" width="30" height="30" class="rounded-circle mx-2">
@@ -85,7 +85,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                         <li><a class="dropdown-item" href="#">Kartu Persediaan baru...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="{{ route('home.setting') }}">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
