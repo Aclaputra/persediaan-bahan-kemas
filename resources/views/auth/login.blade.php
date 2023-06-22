@@ -19,7 +19,9 @@
         <img class="position-absolute top-100 start-0 translate-middle z-index-1" src="{{asset('/img/vector-bawah-login.png') }}" alt="vector-bawah">
     </div>
 
-    <div class="position-absolute top-50 end-0 translate-middle-y z-index-3 container d-flex mt-xxl-5 mx-0">
+    <!-- TODO : flex wrap responsive -->
+    <!-- <div class="position-absolute top-100 end-0 translate-middle-y z-index-3 container d-flex flex-wrap mt-xxl-5 mx-0"> -->
+    <div class="position-absolute top-100 end-0 translate-middle-y z-index-3 container d-flex mt-xxl-5 mx-0">
         <div class="mt-xxl-5">
             <div class="container mt-xxl-5">
                 <h1 class="fw-bold">SHIBA SUKSES SEJAHTERA PERSEDIAAN BAHAN KEMAS</h1>
@@ -31,7 +33,7 @@
             </div>
         </div>
 
-        <div class="container bg-dark rounded-circle d-flex shadow-lg opacity-75">
+        <div class="container bg-dark rounded-circle d-flex shadow-lg opacity-75 my-4">
             <div class="container p-4 m-lg-5 text-dark">
                 <div class="card-header d-flex flex-column">
                     <img class="mx-auto" src="{{asset('/img/shiba.png')}}" alt="">
