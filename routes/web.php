@@ -26,6 +26,8 @@ Route::controller(HomeController::class)
             ->name('dashboard');
         Route::get('/settings', 'setting')
             ->name('setting');
+        Route::get('/profile', 'profile')
+            ->name('profile');  
     });
 
 Route::controller(AdminController::class)
