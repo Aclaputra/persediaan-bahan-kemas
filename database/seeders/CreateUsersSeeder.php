@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class CreateUsersSeeder extends Seeder
 {
@@ -12,9 +12,9 @@ class CreateUsersSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-      $user = [
+        $user = [
             [
                 'name'=>'Admin',
                 'email'=>'admin@gmail.com',

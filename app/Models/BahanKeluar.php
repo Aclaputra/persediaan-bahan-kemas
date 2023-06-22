@@ -9,12 +9,13 @@ class BahanKeluar extends Model
 {
     use HasFactory;
 
-    protected $table = "bahan_keluar";
+    protected $table = 'bahan_keluar';
+
     protected $fillable = [
-      'untuk_produk',
-      'no_bets',
-      'jumlah',
-      'sisa',
-      'paraf'
+        'untuk_produk',
+        'no_bets',
+        'jumlah',
+        'sisa',
+        'paraf',
     ];
 }

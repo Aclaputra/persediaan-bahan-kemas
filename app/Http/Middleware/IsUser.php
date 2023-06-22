@@ -17,7 +17,7 @@ class IsUser
     {
         if (auth()->user()->role == 'user') {
             return $next($request);
-        } else if (auth()->user()->role == 'admin') {
+        } elseif (auth()->user()->role == 'admin') {
             return redirect('/admin')->with('error', 'Bukan tempatnya admin');
         }
 
