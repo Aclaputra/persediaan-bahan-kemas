@@ -19,15 +19,6 @@ class IsAdminGudang
         if (auth()->user()->role == 'admin_gudang') {
             return $next($request);
         }
-        if (auth()->user()->role = 'direktur') {
-            return redirect(RouteServiceProvider::DIREKTUR);
-        }
-
-        // hanya bisa buat 2 kondisi diatas
-        if (auth()->user()->role = 'customer') {
-            return redirect(RouteServiceProvider::HOME);
-        }
-
 
         return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses');
     }

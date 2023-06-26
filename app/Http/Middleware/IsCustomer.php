@@ -16,22 +16,22 @@ class IsCustomer
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // if (auth()->user()->role == 'user') {
-        //     return $next($request);
-        // } elseif (auth()->user()->role == 'admin') {
-        //     return redirect('/admin')->with('error', 'Bukan tempatnya admin');
-        // }
         if (auth()->user()->role == 'customer') {
             return $next($request);
         } 
-        if (auth()->user()->role = 'admin_gudang') {
-            return redirect('/admin_gudang')->with('error', 'Bukan tempatnya admin gudang');
+        if (auth()->user()->role == 'admin_gudang') {
+            return redirect(RouteServiceProvider::ADMIN_GUDANG)->with('error', 'Bukan tempatnya admin gudang');
         } 
-
-        // hanya bisa membuat 2 kondisi diatas
-        if (auth()->user()->role = 'direktur') {
-            return redirect('/direktur')->with('error', 'Bukan tempatnya direktur');
+        if (auth()->user()->role == 'direktur') {
+            return redirect(RouteServiceProvider::DIREKTUR)->with('error', 'Bukan tempatnya direktur');
         }
+        if (auth()->user()->role == 'supplier') {
+            return redirect(RouteServiceProvider::SUPPLIER)->with('error', 'Bukan tempatnya supplier');
+        }
+        if (auth()->user()->role == 'marketing') {
+            return redirect(RouteServiceProvider::MARKETING)->with('error', 'Bukan tempatnya marketing');
+        }
+        
 
         return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses');
     }
