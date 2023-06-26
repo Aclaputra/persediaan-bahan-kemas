@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsUser
+class IsSupplier
 {
     /**
      * Handle an incoming request.
@@ -15,12 +16,10 @@ class IsUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->role == 'user') {
+        if (auth()->user()->role == 'supplier') {
             return $next($request);
-        } elseif (auth()->user()->role == 'admin') {
-            return redirect('/admin')->with('error', 'Bukan tempatnya admin');
         }
 
-        return redirect('/login')->with('error', 'Kamu tidak memiliki akses');
+        return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses');
     }
 }

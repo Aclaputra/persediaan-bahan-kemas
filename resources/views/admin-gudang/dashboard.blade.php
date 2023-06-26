@@ -21,7 +21,6 @@
             <span class="fw-bold fs-5">Total Bahan Kemas</span>
             <span>100</span>
         </div>
-
     </div>
 </div>
 

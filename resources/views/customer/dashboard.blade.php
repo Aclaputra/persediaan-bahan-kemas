@@ -1,4 +1,4 @@
-@extends('layouts.app.v2')
+@extends('../layouts.app.v2-admin')
 
 @section('content')
 <div class="container d-flex">
@@ -21,7 +21,6 @@
             <span class="fw-bold fs-5">Total Bahan Kemas</span>
             <span>100</span>
         </div>
-
     </div>
 </div>
 

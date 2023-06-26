@@ -27,6 +27,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    // BUAT REDIRECT TO DINAMIS BERDASARKAN ROLE USER
 
     /**
      * Create a new controller instance.

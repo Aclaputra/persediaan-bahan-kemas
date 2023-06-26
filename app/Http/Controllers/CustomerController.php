@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,21 +16,19 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(): \Illuminate\Contracts\Support\Renderable
     {
-        return view('dashboard');
+        return view('customer.dashboard');
     }
 
     public function setting()
     {
-        return view('setting');
+        return view('customer.setting');
     }
 
     public function profile()
     {
-        return view('profile');
+        return view('customer.profile');
     }
 }

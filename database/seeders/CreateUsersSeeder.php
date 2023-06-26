@@ -9,8 +9,6 @@ class CreateUsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -18,32 +16,32 @@ class CreateUsersSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'email' => 'admin@gmail.com',
-                'role' => 'admin',
-                'password' => bcrypt('123456'),
+                'role' => 'admin_gudang',
+                'password' => bcrypt('password'),
             ],
             [
                 'name' => 'aclaputra',
-                'email' => 'acla@gmail.com',
-                'role' => 'user',
-                'password' => bcrypt('123456'),
+                'email' => 'customer@gmail.com',
+                'role' => 'customer',
+                'password' => bcrypt('password'),
             ],
             [
-                'name' => 'myrakarimah',
-                'email' => 'myra@gmail.com',
-                'role' => 'user',
-                'password' => bcrypt('123456'),
+                'name' => 'saipulloh',
+                'email' => 'direktur@gmail.com',
+                'role' => 'direktur',
+                'password' => bcrypt('password'),
             ],
             [
                 'name' => 'alcaumaru',
-                'email' => 'alca@gmail.com',
-                'role' => 'user',
-                'password' => bcrypt('123456'),
+                'email' => 'marketing@gmail.com',
+                'role' => 'marketing',
+                'password' => bcrypt('password'),
             ],
             [
                 'name' => 'yosafat',
-                'email' => 'yosafat@gmail.com',
-                'role' => 'user',
-                'password' => bcrypt('123456'),
+                'email' => 'supplier@gmail.com',
+                'role' => 'supplier',
+                'password' => bcrypt('password'),
             ],
         ];
 

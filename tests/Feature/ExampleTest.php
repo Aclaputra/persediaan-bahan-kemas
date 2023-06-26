@@ -17,7 +17,7 @@ class ExampleTest extends TestCase
         $response->assertStatus(301);
     }
 
-    public function test_admin(): void 
+    public function test_admin(): void
     {
         $response = $this->get('/admin');
 

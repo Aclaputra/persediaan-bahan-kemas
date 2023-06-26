@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsAdmin
+class IsDirektur
 {
     /**
      * Handle an incoming request.
@@ -15,10 +16,10 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->role == 'admin') {
+        if (auth()->user()->role == 'direktur') {
             return $next($request);
         }
 
-        return redirect('/login')->with('error', 'Kamu tidak memiliki akses admin');
+        return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses');
     }
 }

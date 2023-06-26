@@ -29,7 +29,7 @@
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
 {{--                    home--}}
                     <li class="nav-item">
-                        <a href="{{ route('home.dashboard') }}" class="nav-link align-middle px-0 text-secondary">
+                        <a href="{{ route('marketing.dashboard') }}" class="nav-link align-middle px-0 text-secondary">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-light">Home</span>
                         </a>
                     </li>
@@ -51,7 +51,7 @@
                         <a href="#" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Orders</span></a>
                     </li>
-                    {{-- proucts--}}
+                    {{-- products--}}
                     <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-grid text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Products</span> </a>
@@ -85,8 +85,8 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                         <li><a class="dropdown-item" href="#">Kartu Persediaan baru...</a></li>
-                        <li><a class="dropdown-item" href="{{ route('home.setting') }}">Settings</a></li>
-                        <li><a class="dropdown-item" href="{{ route('home.profile') }}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('customer.setting') }}">Settings</a></li>
+                        <li><a class="dropdown-item" href="{{ route('customer.profile') }}">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
