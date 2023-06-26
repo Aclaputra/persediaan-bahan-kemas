@@ -20,9 +20,26 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+            if (Auth::guard($guard)->check() && auth()->user()->role = 'customer') {
                 return redirect(RouteServiceProvider::HOME);
             }
+            if (Auth::guard($guard)->check() && auth()->user()->role = 'admin_gudang') {
+                return redirect(RouteServiceProvider::ADMIN_GUDANG);
+            } 
+            if (Auth::guard($guard)->check() && auth()->user()->role = 'direktur') {
+                return redirect(RouteServiceProvider::DIREKTUR);
+            }
+            // if (Auth::guard($guard)->role = 'customer') {
+            //     return redirect(RouteServiceProvider::HOME);
+            // } else if (Auth::guard($guard)->role = 'admin_gudang') {
+            //     return redirect(RouteServiceProvider::ADMIN_GUDANG);
+            // } else if (Auth::guard($guard)->role = 'supplier') {
+            //     return redirect(RouteServiceProvider::SUPPLIER);
+            // } else if (Auth::guard($guard)->role = 'marketing') {
+            //     return redirect(RouteServiceProvider::MARKETING);
+            // } else if (Auth::guard($guard)->role = 'direktur') {
+            //     return redirect(RouteServiceProvider::DIREKTUR);
+            // }
         }
 
         return $next($request);

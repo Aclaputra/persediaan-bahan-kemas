@@ -9,41 +9,39 @@ class CreateUsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
         $user = [
             [
-                'name'=>'Admin',
-                'email'=>'admin@gmail.com',
-                'role'=>'admin',
-                'password'=> bcrypt('password'),
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'role' => 'admin_gudang',
+                'password' => bcrypt('password'),
             ],
             [
-                'name'=>'aclaputra',
-                'email'=>'acla@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('password'),
+                'name' => 'aclaputra',
+                'email' => 'customer@gmail.com',
+                'role' => 'customer',
+                'password' => bcrypt('password'),
             ],
             [
-                'name'=>'dipesh malvia',
-                'email'=>'dipesh@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('password'),
+                'name' => 'saipulloh',
+                'email' => 'direktur@gmail.com',
+                'role' => 'direktur',
+                'password' => bcrypt('password'),
             ],
             [
-                'name'=>'alcaumaru',
-                'email'=>'alca@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('password'),
+                'name' => 'alcaumaru',
+                'email' => 'marketing@gmail.com',
+                'role' => 'marketing',
+                'password' => bcrypt('password'),
             ],
             [
-                'name'=>'yosafat',
-                'email'=>'yosafat@gmail.com',
-                'role'=>'user',
-                'password'=> bcrypt('password'),
+                'name' => 'yosafat',
+                'email' => 'supplier@gmail.com',
+                'role' => 'supplier',
+                'password' => bcrypt('password'),
             ],
         ];
 
