@@ -101,7 +101,7 @@
             </div>
         </div>
         <div class="col py-3 bg-dark text-light">
-            <span class="text-secondary">User > Dashboard > @yield('page')</span>
+            <span class="text-secondary">Customer > Dashboard > @yield('page')</span>
             <!-- <span class="text-secondary">User > Dashboard > (current page)</span> -->
             @yield('content')
         </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app.v2')
+@extends('layouts.app.v2-marketing')
 
 @section('page', 'Setting')
 @section('content')

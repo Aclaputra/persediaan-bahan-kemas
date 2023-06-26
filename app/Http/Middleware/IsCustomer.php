@@ -31,7 +31,6 @@ class IsCustomer
         if (auth()->user()->role == 'marketing') {
             return redirect(RouteServiceProvider::MARKETING)->with('error', 'Bukan tempatnya marketing');
         }
-        
 
         return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses');
     }

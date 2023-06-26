@@ -24,7 +24,7 @@ Auth::routes();
 Route::controller(CustomerController::class)
     ->prefix('customer')
     ->as('customer.')
-    ->middleware(['auth', 'is.customer'])
+->middleware(['auth', 'is.customer'])
     ->group(function () {
         Route::get('/', 'index')
             ->name('dashboard');

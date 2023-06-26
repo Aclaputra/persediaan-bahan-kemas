@@ -85,8 +85,8 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                         <li><a class="dropdown-item" href="#">Kartu Persediaan baru...</a></li>
-                        <li><a class="dropdown-item" href="{{ route('admin.gudang.setting') }}">Settings</a></li>
-                        <li><a class="dropdown-item" href="{{ route('admin.gudang.profile') }}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('marketing.setting') }}">Settings</a></li>
+                        <li><a class="dropdown-item" href="{{ route('marketing.profile') }}">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -101,7 +101,7 @@
             </div>
         </div>
         <div class="col py-3 bg-dark text-light">
-            <span class="text-secondary">Admin Gudang > Dashboard > @yield('page')</span>
+            <span class="text-secondary">Marketing > Dashboard > @yield('page')</span>
             <!-- <span class="text-secondary">User > Dashboard > (current page)</span> -->
             @yield('content')
         </div>

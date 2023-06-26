@@ -1,4 +1,4 @@
-@extends('../layouts.app.v2-admin')
+@extends('../layouts.app.v2-supplier')
 
 @section('page', 'profile')
 @section('content')

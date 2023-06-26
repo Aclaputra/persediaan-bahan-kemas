@@ -1,4 +1,4 @@
-@extends('../layouts.app.v2-admin')
+@extends('../layouts.app.v2')
 
 @section('content')
 <div class="container d-flex">
