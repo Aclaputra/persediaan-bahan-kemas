@@ -15,18 +15,32 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->text('alamat');
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', [
-                'customer',
-                'marketing',
-                'admin_gudang',
-                'supplier',
-                'direktur',
-            ])->default('customer');
+                'admin',
+                'marketing'
+            ]);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+        // Schema::create('users', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('name');
+        //     $table->string('email')->unique();
+        //     $table->timestamp('email_verified_at')->nullable();
+        //     $table->enum('role', [
+        //         'customer',
+        //         'marketing',
+        //         'admin_gudang',
+        //         'supplier',
+        //         'direktur',
+        //     ])->default('customer');
+        //     $table->string('password');
+        //     $table->rememberToken();
+        //     $table->timestamps();
+        // });
     }
 
     /**

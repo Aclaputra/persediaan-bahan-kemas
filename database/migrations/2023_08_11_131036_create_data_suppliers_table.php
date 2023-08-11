@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kartu_persediaan', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_produk');
-            $table->string('kode_produk');
-            $table->string('satuan');
-            $table->string('keterangan');
+        Schema::create('data_suppliers', function (Blueprint $table) {
+            $table->id('kd_suppliers');
+            $table->string('nama');
+            $table->text('detail');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kartu_persediaan');
+        Schema::dropIfExists('data_suppliers');
     }
 };

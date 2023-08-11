@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bahan_keluar', function (Blueprint $table) {
-            $table->id();
-            $table->string('untuk_produk');
-            $table->string('no_bets')->unique();
-            $table->bigInteger('jumlah');
-            $table->bigInteger('sisa');
-            $table->binary('paraf'); // blob
+        Schema::create('notas', function (Blueprint $table) {
+            $table->id('no_nota');
+            $table->string('kd_pesanan');
+            $table->string('nama');
+            $table->text('detail');
+            $table->integer('total_harga');
+            $table->timestamps();
         });
-
     }
 
     /**
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bahan_keluar');
+        Schema::dropIfExists('notas');
     }
 };
