@@ -21,7 +21,7 @@
 
     <!-- TODO : flex wrap responsive -->
     <!-- <div class="position-absolute top-100 end-0 translate-middle-y z-index-3 container d-flex flex-wrap mt-xxl-5 mx-0"> -->
-    <div class="position-absolute top-100 end-0 translate-middle-y z-index-3 container d-flex mt-xxl-5 mx-0">
+    <div  class="flex-lg-nowrap flex-wrap position-absolute  top-100 end-0 translate-middle-y z-index-3 container d-flex mt-xxl-5 mx-0">
         <div class="mt-xxl-5">
             <div class="container mt-xxl-5">
                 <h1 class="fw-bold">SHIBA SUKSES SEJAHTERA PERSEDIAAN BAHAN KEMAS</h1>
