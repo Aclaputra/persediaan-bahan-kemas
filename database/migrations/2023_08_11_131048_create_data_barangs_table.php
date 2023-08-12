@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('kd_supplier');
             $table->foreign('kd_supplier')->references('kd_supplier')->on('data_suppliers');
             // $table->string('kd_supplier');
+            $table->string('jenis');
             $table->string('nama');
             $table->string('harga');
             $table->integer('stok');

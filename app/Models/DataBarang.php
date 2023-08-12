@@ -14,6 +14,7 @@ class DataBarang extends Model
     protected $fillable = [
         'kd_supplier',
         'nama',
+        'jenis'
         'harga',
         'stok',
     ];
