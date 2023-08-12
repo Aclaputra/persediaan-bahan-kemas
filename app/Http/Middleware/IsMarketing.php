@@ -19,7 +19,10 @@ class IsMarketing
         if (auth()->user()->role == 'marketing') {
             return $next($request);
         }
-
-        return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses admin');
+        if (auth()->user()->role == 'admin') {
+            return redirect(RouteServiceProvider::ADMIN)->with('error', 'Bukan tempatnya marketing');
+        } 
+        
+        return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses');
     }
 }

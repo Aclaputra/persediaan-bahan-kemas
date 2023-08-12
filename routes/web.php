@@ -21,21 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', 'login', 301);
 
 Auth::routes();
-Route::controller(CustomerController::class)
-    ->prefix('customer')
-    ->as('customer.')
-->middleware(['auth', 'is.customer'])
-    ->group(function () {
-        Route::get('/', 'index')
-            ->name('dashboard');
-        Route::prefix('settings')->group(function () {
-            Route::get('/', 'setting')
-                ->name('setting');
-            Route::get('/profile', 'profile')
-                ->name('profile');
-        });
-    });
-
 Route::controller(MarketingController::class)
     ->prefix('marketing')
     ->as('marketing.')
@@ -54,37 +39,7 @@ Route::controller(MarketingController::class)
 Route::controller(AdminGudangController::class)
     ->prefix('admin_gudang')
     ->as('admin.gudang.')
-    ->middleware(['auth', 'is.admin.gudang'])
-    ->group(function () {
-        Route::get('/', 'index')
-            ->name('dashboard');
-        Route::prefix('settings')->group(function () {
-            Route::get('/', 'setting')
-                ->name('setting');
-            Route::get('/profile', 'profile')
-                ->name('profile');
-        });
-    });
-
-Route::controller(SupplierController::class)
-    ->prefix('supplier')
-    ->as('supplier.')
-    ->middleware(['auth', 'is.supplier'])
-    ->group(function () {
-        Route::get('/', 'index')
-            ->name('dashboard');
-        Route::prefix('settings')->group(function () {
-            Route::get('/', 'setting')
-                ->name('setting');
-            Route::get('/profile', 'profile')
-                ->name('profile');
-        });
-    });
-
-Route::controller(DirekturController::class)
-    ->prefix('direktur')
-    ->as('direktur.')
-    ->middleware(['auth', 'is.direktur'])
+    ->middleware(['auth', 'is.admin'])
     ->group(function () {
         Route::get('/', 'index')
             ->name('dashboard');

@@ -2,12 +2,11 @@
 
 namespace App\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsDirektur
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,10 +15,14 @@ class IsDirektur
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->role == 'direktur') {
+        if (auth()->user()->role == 'admin') 
+        {
             return $next($request);
         }
-
+        if (auth()->user()->role == 'marketing') {
+            return redirect(RouteServiceProvider::MARKETING)->with('error', 'Bukan tempatnya marketing');
+        } 
+        
         return redirect(RouteServiceProvider::LOGIN)->with('error', 'Kamu tidak memiliki akses');
     }
 }
