@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notas', function (Blueprint $table) {
-            $table->id('no_nota');
+            $table->string('no_nota')->primary();
+            // $table->string('kd_pesanan');
             $table->string('kd_pesanan');
+            $table->foreign('kd_pesanan')->references('kd_pesanan')->on('data_pesanans');
+
             $table->string('nama');
             $table->text('detail');
             $table->integer('total_harga');

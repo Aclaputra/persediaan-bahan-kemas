@@ -11,13 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surat_persetujuans', function (Blueprint $table) {
-            $table->id();
+        Schema::create('data_pesanans', function (Blueprint $table) {
+            $table->string('kd_pesanan')->primary();
+            // $table->string('kd_barang');
             // $table->string('kd_customer');
+            // $table->string('kd_supplier');
+            // $table->foreign('kd_supplier')->references('kd_supplier')->on('data_suppliers');
+            // $table->string('kd_barang');
+            // $table->foreign('kd_barang')->references('kd_barang')->on('data_barangs');
             $table->string('kd_customer');
             $table->foreign('kd_customer')->references('kd_customer')->on('data_customers');
-            
+
             $table->string('nama');
+            $table->string('status');
             $table->text('detail');
             $table->timestamps();
         });
@@ -28,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surat_persetujuans');
+        Schema::dropIfExists('data_pesanans');
     }
 };
