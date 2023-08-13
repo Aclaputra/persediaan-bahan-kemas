@@ -22,7 +22,7 @@ Route::redirect('/', 'login', 301);
 
 Auth::routes();
 Route::controller(MarketingController::class)
-    ->prefix('marketing')
+    ->prefix('transaksi')
     ->as('marketing.')
     ->middleware(['auth', 'is.marketing'])
     ->group(function () {
@@ -37,7 +37,7 @@ Route::controller(MarketingController::class)
     });
 
 Route::controller(AdminGudangController::class)
-    ->prefix('admin_gudang')
+    ->prefix('master')
     ->as('admin.gudang.')
     ->middleware(['auth', 'is.admin'])
     ->group(function () {

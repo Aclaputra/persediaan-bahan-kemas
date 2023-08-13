@@ -19,11 +19,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const LOGIN = '/login';
 
-    public const HOME = '/marketing';
+    public const HOME = '/transaksi';
 
-    public const ADMIN = '/admin_gudang';
+    public const ADMIN = '/master';
 
-    public const MARKETING = '/marketing';
+    public const MARKETING = '/transaksi';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.

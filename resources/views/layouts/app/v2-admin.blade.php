@@ -41,15 +41,29 @@
                             </li>
                         </ul>
                     </li>
-                    {{-- orders--}}
+                    {{-- Data Barang--}}
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Orders</span></a>
+                        <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Data Barang</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0 text-secondary"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 text-secondary"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 text-secondary"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 text-secondary"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                            </li>
+                        </ul>
                     </li>
-                    {{-- proucts--}}
+                    {{-- Data Suppliers --}}
                     <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Products</span> </a>
+                            <i class="fs-4 bi-grid text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Data Suppliers</span> </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0 text-secondary"> <span class="d-none d-sm-inline">Product</span> 1</a>
@@ -65,10 +79,10 @@
                             </li>
                         </ul>
                     </li>
-                    {{-- customers--}}
+                    {{-- Data Customers--}}
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Customers</span> </a>
+                            <i class="fs-4 bi-people text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Data Customers</span> </a>
                     </li>
                 </ul>
                 <hr>
@@ -96,7 +110,7 @@
             </div>
         </div>
         <div class="col py-3 bg-dark text-light">
-            <span class="text-secondary">Admin Gudang > Dashboard > @yield('page')</span>
+            <span class="text-secondary">Master > Dashboard > @yield('page')</span>
             <!-- <span class="text-secondary">User > Dashboard > (current page)</span> -->
             @yield('content')
         </div>
