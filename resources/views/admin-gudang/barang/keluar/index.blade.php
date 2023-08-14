@@ -5,7 +5,7 @@
     <div class="container bg-secondary rounded row m-4">
         <div class="p-2 row">
             <span class="fw-bold fs-5">Total Barang keluar</span>
-            <span>900</span>
+            <span>{{ $total_keluar }}</span>
         </div>
 
     </div>

@@ -23,7 +23,8 @@ class DataBarangMasukController extends Controller
         // dd($barang_masuk);
         // barang inner join supplier
         // dd($barang_masuk[0]->data_suppliers_id);
-        return view('admin-gudang.barang.masuk.index', compact('barang_masuk'));
+        $total_masuk = DataBarang::where('jalur','=','masuk')->count();
+        return view('admin-gudang.barang.masuk.index', compact('barang_masuk','total_masuk'));
     }
 
     /**

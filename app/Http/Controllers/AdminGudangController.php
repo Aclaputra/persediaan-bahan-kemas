@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataBarang;
+use Illuminate\Support\Facades\DB;
+
 class AdminGudangController extends Controller
 {
     /**
@@ -19,7 +22,13 @@ class AdminGudangController extends Controller
      */
     public function index(): \Illuminate\Contracts\Support\Renderable
     {
-        return view('admin-gudang.dashboard');
+        $total_masuk = DataBarang::where('jalur','=','masuk')->count();
+        $total_keluar = DataBarang::where('jalur','=','keluar')->count();
+        $barang_masuk = DB::table('data_barangs')
+            // ->join('data_suppliers','data_suppliers.id','=','data_barangs.data_suppliers_id')
+            ->where('jalur','=','masuk')
+            ->get();
+        return view('admin-gudang.dashboard', compact('total_masuk','total_keluar','barang_masuk'));
     }
 
     public function setting()
