@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SuratPersetujuan;
 use Illuminate\Http\Request;
 
-class SuratPersetujuanController extends Controller
+class SuratPesananController extends Controller
 {
     /**
      * Display a listing of the resource.

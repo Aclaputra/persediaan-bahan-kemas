@@ -14,7 +14,6 @@ class DataSupplier extends Model
     protected $fillable = [
         'kd_supplier',
         'nama',
-        'harga',
-        'stok',
+        'detail',
     ];
 }

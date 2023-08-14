@@ -12,7 +12,7 @@ class NotaController extends Controller
      */
     public function index()
     {
-        //
+        return view('marketing.nota.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class NotaController extends Controller
      */
     public function create()
     {
-        //
+        return view('marketing.nota.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class NotaController extends Controller
      */
     public function show(Nota $nota)
     {
-        //
+        return view('marketing.nota.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class NotaController extends Controller
      */
     public function edit(Nota $nota)
     {
-        //
+        return view('marketing.nota.edit');
     }
 
     /**

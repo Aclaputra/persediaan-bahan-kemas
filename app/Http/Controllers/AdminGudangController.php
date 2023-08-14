@@ -31,4 +31,14 @@ class AdminGudangController extends Controller
     {
         return view('admin-gudang.profile');
     }
+
+    public function masuk()
+    {
+        return view('admin-gudang.barang.masuk');
+    }
+
+    public function keluar()
+    {
+        return view('admin-gudang.barang.keluar');
+    }
 }

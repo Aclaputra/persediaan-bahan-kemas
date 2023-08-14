@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SuratPersetujuan;
+use App\Models\DataBarang;
 use Illuminate\Http\Request;
 
-class SuratPersetujuanController extends Controller
+class DataBarangMasukController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $supplier = DataSupplier::all();
-        return view('admin-gudang.barang.supplier.index', compact('supplier'));
+        // find all with jalur of masuk
+        $barang_masuk = DataBarang::all();
+        return view('admin-gudang.barang.masuk.index', compact('barang_masuk'));
     }
 
     /**
@@ -21,7 +22,9 @@ class SuratPersetujuanController extends Controller
      */
     public function create()
     {
-        return view('admin-gudang.barang.supplier.create');
+        // $barang_masuk = DataBarang::where('jalur','=','masuk');
+
+        return view('admin-gudang.barang.masuk.create');
     }
 
     /**
@@ -31,39 +34,43 @@ class SuratPersetujuanController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
-            'detail' => 'required',
+            'harga' => 'required',
+            'jenis' => 'required',
+            'stok' => 'required',
         ]);
 
-        $barang_masuk = new DataSupplier();
+        $barang_masuk = new DataBarang();
         $barang_masuk->nama = $validatedData['nama'];
-        $barang_masuk->detail = $validatedData['detail'];
+        $barang_masuk->harga = $validatedData['harga'];
+        $barang_masuk->jenis = $validatedData['jenis'];
+        $barang_masuk->stok = $validatedData['stok'];
         $barang_masuk->save();
 
-        return redirect()->route('admin.gudang.supplier.index')->with('success', 'Barang Masuk Created Successfully');
+        return redirect()->route('admin.gudang.masuk.index')->with('success', 'Barang Masuk Created Successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(String $id)
+    public function show(string $id)
     {
-        $supplier = DataSupplier::findOrFail($id);
-        return view('admin-gudang.barang.supplier.show', compact('supplier'));
+        $barang_masuk = DataBarang::findOrFail($id);
+        return view('admin-gudang.barang.masuk.show', compact('barang_masuk'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(String $id)
+    public function edit(string $id)
     {
-        $supplier = DataSupplier::findOrFail($id);
-        return view('admin-gudang.barang.supplier.edit', compact('supplier'));
+        $barang_masuk = DataBarang::findOrFail($id);
+        return view('admin-gudang.barang.masuk.edit', compact('barang_masuk'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DataSupplier $dataSupplier)
+    public function update(Request $request, string $id)
     {
         $validatedData = $request->validate([
             'nama' => 'required',
@@ -85,7 +92,7 @@ class SuratPersetujuanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DataSupplier $dataSupplier)
+    public function destroy(String $id)
     {
         $barang_masuk = DataBarang::findOrFail($id);
         $barang_masuk->delete();

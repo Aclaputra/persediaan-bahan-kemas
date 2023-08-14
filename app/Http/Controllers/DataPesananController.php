@@ -12,7 +12,8 @@ class DataPesananController extends Controller
      */
     public function index()
     {
-        //
+        $supplier = DataSupplier::all();
+        return view('admin-gudang.barang.supplier.index', compact('supplier'));
     }
 
     /**
@@ -20,7 +21,7 @@ class DataPesananController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin-gudang.barang.supplier.create');
     }
 
     /**
@@ -28,38 +29,67 @@ class DataPesananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'detail' => 'required',
+        ]);
+
+        $barang_masuk = new DataSupplier();
+        $barang_masuk->nama = $validatedData['nama'];
+        $barang_masuk->detail = $validatedData['detail'];
+        $barang_masuk->save();
+
+        return redirect()->route('admin.gudang.supplier.index')->with('success', 'Barang Masuk Created Successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(DataPesanan $dataPesanan)
+    public function show(String $id)
     {
-        //
+        $supplier = DataSupplier::findOrFail($id);
+        return view('admin-gudang.barang.supplier.show', compact('supplier'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DataPesanan $dataPesanan)
+    public function edit(String $id)
     {
-        //
+        $supplier = DataSupplier::findOrFail($id);
+        return view('admin-gudang.barang.supplier.edit', compact('supplier'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DataPesanan $dataPesanan)
+    public function update(Request $request, DataSupplier $dataSupplier)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'harga' => 'required',
+            'jenis' => 'required',
+            'stok' => 'required',
+        ]);
+
+        $barang_masuk = DataBarang::findOrFail($id);
+        $barang_masuk->nama = $validatedData['nama'];
+        $barang_masuk->harga = $validatedData['harga'];
+        $barang_masuk->jenis = $validatedData['jenis'];
+        $barang_masuk->stok = $validatedData['stok'];
+        $barang_masuk->save();
+
+        return redirect()->route('admin.gudang.masuk.index')->with('success', 'barang masuk updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DataPesanan $dataPesanan)
+    public function destroy(DataSupplier $dataSupplier)
     {
-        //
+        $barang_masuk = DataBarang::findOrFail($id);
+        $barang_masuk->delete();
+
+        return redirect()->route('admin.gudang.masuk.index')->with('success', 'barang masuk deleted successfully');
     }
 }

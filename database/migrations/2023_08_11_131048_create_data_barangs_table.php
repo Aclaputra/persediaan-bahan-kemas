@@ -12,11 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('data_barangs', function (Blueprint $table) {
-            $table->string('kd_barang')->primary();
-            $table->string('kd_supplier');
-            $table->foreign('kd_supplier')->references('kd_supplier')->on('data_suppliers');
+            $table->id();
+            $table->unsignedBigInteger('data_suppliers_id');
+            $table->foreign('data_suppliers_id')
+                ->references('id')->on('data_suppliers');
+            // $table->foreign('kd_supplier')->references('kd_supplier')->on('data_suppliers');
             // $table->string('kd_supplier');
             $table->string('jenis');
+            $table->enum('jalur', [
+                'masuk',
+                'keluar'
+            ]);
             $table->string('nama');
             $table->string('harga');
             $table->integer('stok');

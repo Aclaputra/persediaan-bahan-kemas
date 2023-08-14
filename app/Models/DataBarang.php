@@ -15,6 +15,7 @@ class DataBarang extends Model
         'kd_supplier',
         'nama',
         'jenis',
+        'jalur',
         'harga',
         'stok',
     ];
