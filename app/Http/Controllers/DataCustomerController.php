@@ -12,8 +12,8 @@ class DataCustomerController extends Controller
      */
     public function index()
     {
-        $supplier = DataSupplier::all();
-        return view('admin-gudang.barang.supplier.index', compact('supplier'));
+        $customer = DataCustomer::all();
+        return view('admin-gudang.customer.index', compact('customer'));
     }
 
     /**
@@ -21,7 +21,7 @@ class DataCustomerController extends Controller
      */
     public function create()
     {
-        return view('admin-gudang.barang.supplier.create');
+        return view('admin-gudang.customer.create');
     }
 
     /**
@@ -31,15 +31,17 @@ class DataCustomerController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
+            'alamat' => 'required',
             'detail' => 'required',
         ]);
 
-        $barang_masuk = new DataSupplier();
-        $barang_masuk->nama = $validatedData['nama'];
-        $barang_masuk->detail = $validatedData['detail'];
-        $barang_masuk->save();
+        $customer = new DataCustomer();
+        $customer->nama = $validatedData['nama'];
+        $customer->detail = $validatedData['detail'];
+        $customer->alamat = $validatedData['alamat'];
+        $customer->save();
 
-        return redirect()->route('admin.gudang.supplier.index')->with('success', 'Barang Masuk Created Successfully');
+        return redirect()->route('admin.gudang.customer.index')->with('success', 'Barang customer Created Successfully');
     }
 
     /**
@@ -47,8 +49,8 @@ class DataCustomerController extends Controller
      */
     public function show(String $id)
     {
-        $supplier = DataSupplier::findOrFail($id);
-        return view('admin-gudang.barang.supplier.show', compact('supplier'));
+        $customer = DataCustomer::findOrFail($id);
+        return view('admin-gudang.customer.show', compact('customer'));
     }
 
     /**
@@ -56,40 +58,38 @@ class DataCustomerController extends Controller
      */
     public function edit(String $id)
     {
-        $supplier = DataSupplier::findOrFail($id);
-        return view('admin-gudang.barang.supplier.edit', compact('supplier'));
+        $customer = DataCustomer::findOrFail($id);
+        return view('admin-gudang.customer.edit', compact('customer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DataSupplier $dataSupplier)
+    public function update(Request $request, string $id)
     {
         $validatedData = $request->validate([
             'nama' => 'required',
-            'harga' => 'required',
-            'jenis' => 'required',
-            'stok' => 'required',
+            'alamat' => 'required',
+            'detail' => 'required',
         ]);
 
-        $barang_masuk = DataBarang::findOrFail($id);
-        $barang_masuk->nama = $validatedData['nama'];
-        $barang_masuk->harga = $validatedData['harga'];
-        $barang_masuk->jenis = $validatedData['jenis'];
-        $barang_masuk->stok = $validatedData['stok'];
-        $barang_masuk->save();
+        $customer = DataCustomer::findOrFail($id);
+        $customer->nama = $validatedData['nama'];
+        $customer->alamat = $validatedData['alamat'];
+        $customer->detail = $validatedData['detail'];
+        $customer->save();
 
-        return redirect()->route('admin.gudang.masuk.index')->with('success', 'barang masuk updated successfully');
+        return redirect()->route('admin.gudang.customer.index')->with('success', 'barang customer updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DataSupplier $dataSupplier)
+    public function destroy(DataCustomer $datacustomer, string $id)
     {
-        $barang_masuk = DataBarang::findOrFail($id);
-        $barang_masuk->delete();
+        $customer = DataCustomer::findOrFail($id);
+        $customer->delete();
 
-        return redirect()->route('admin.gudang.masuk.index')->with('success', 'barang masuk deleted successfully');
+        return redirect()->route('admin.gudang.customer.index')->with('success', 'barang customer deleted successfully');
     }
 }

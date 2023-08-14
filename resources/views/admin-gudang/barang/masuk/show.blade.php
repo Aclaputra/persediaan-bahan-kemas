@@ -26,22 +26,25 @@
 </div> -->
 
 <table class="table text-light">
+    <h1 class="m-4">Detail Barang</h1>
     <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Nama</th>
+        <th scope="col">Jenis</th>
+        <th scope="col">Harga</th>
+        <th scope="col">Stok</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-    <tr>
+        <tr>
+            <!-- <th scope="row">{{ $barang->id }}</th> -->
+            <th scope="row">{{ $barang->nama_barang }}</th>
+            <th scope="row">{{ $barang->harga }}</th>
+            <th scope="row">{{ $barang->jenis }}</th>
+            <th scope="row">{{ $barang->stok }}</th>
+        </tr>
+    <!-- <tr>
         <th scope="row">2</th>
         <td>Jacob</td>
         <td>Thornton</td>
@@ -51,7 +54,7 @@
         <th scope="row">3</th>
         <td colspan="2">Larry the Bird</td>
         <td>@twitter</td>
-    </tr>
+    </tr> -->
     </tbody>
 </table>
 @endsection

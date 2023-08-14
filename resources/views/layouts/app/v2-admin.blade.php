@@ -56,7 +56,7 @@
                     </li>
                     {{-- Data Suppliers --}}
                     <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <a href="{{ route('admin.gudang.supplier.index') }}" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-grid text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Data Suppliers</span> </a>
                         <!-- <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
@@ -75,7 +75,7 @@
                     </li>
                     {{-- Data Customers--}}
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
+                        <a href="{{ route('admin.gudang.customer.index') }}" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-people text-secondary"></i> <span class="ms-1 d-none d-sm-inline text-light">Data Customers</span> </a>
                     </li>
                 </ul>

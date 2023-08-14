@@ -34,33 +34,38 @@
         <th scope="col">Jenis</th>
         <th scope="col">Harga</th>
         <th scope="col">Stok</th>
+        <!-- <th scope="col">Supplier</th> -->
         <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
+    <?php $i=1; ?>
     @foreach ($barang_masuk as $masuk)
     <tr>
-        <th scope="row">{{ $masuk->id }}</th>
-        <td>{{ $masuk->nama }}</td>
+        <th scope="row">{{ $i++ }}</th>
+        <td>{{ $masuk->nama_barang }}</td>
         <td>{{ $masuk->jenis }}</td>
         <td>{{ $masuk->harga }}</td>
         <td>{{ $masuk->stok }}</td>
         <td>
-            <!-- <button href="{{ route('admin.gudang.keluar.edit', $masuk->id) }}" class="btn btn-warning">edit</button> -->
-            <!-- <button class="btn btn-primary">show</button> -->
-            <a href="{{ route('admin.gudang.masuk.edit', $masuk-id }}"><button class="btn btn-warning">edit</button></a>
-            <!-- <button class="btn btn-danger">delete</button> -->
-            <a href="{{ route('admin.gudang.masuk.show', $masuk->id) }}"
-                                class="block bg-white rounded-lg shadow-md">
-                                <button class="btn btn-primary">show</button>
-                                
-                            </a>
-            <form action="{{ route('admin.gudang.masuk.destroy', $masuk->id) }}"
-                                method="POST" style="display: inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+            <div class="container d-flex">
+
+                <!-- <button href="{{ route('admin.gudang.keluar.edit', $masuk->id) }}" class="btn btn-warning">edit</button> -->
+                <!-- <button class="btn btn-primary">show</button> -->
+                <a href="{{ route('admin.gudang.masuk.edit', $masuk->id) }}"><button class="btn btn-warning mx-2">edit</button></a>
+                <!-- <button class="btn btn-danger">delete</button> -->
+                <a href="{{ route('admin.gudang.masuk.show', $masuk->id) }}"
+                class="block rounded-lg shadow-md mx-2">
+                <button class="btn btn-primary">show</button>
+                
+                </a>
+                <form action="{{ route('admin.gudang.masuk.destroy', $masuk->id) }}" method="POST" style="display: inline-block;">
+                    @csrf
+                    @method('DELETE')
+                    
+                    <button type="submit" class="btn btn-danger mx-2">Delete</button>
+                </form>
+            </div>
         </td>
     </tr>
     @endforeach

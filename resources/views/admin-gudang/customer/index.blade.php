@@ -4,7 +4,7 @@
 <div class="container d-flex">
     <div class="container bg-secondary rounded row m-4">
         <div class="p-2 row">
-            <span class="fw-bold fs-5">Total Barang Masuk</span>
+            <span class="fw-bold fs-5">Total Customers</span>
             <span>900</span>
         </div>
 
@@ -25,55 +25,45 @@
 </div>
 
 <table class="table text-light">
-    <h1 class="p-2">List Barang Masuk</h1>
-    <a href="{{ route('admin.gudang.masuk.create') }}"><button class="btn btn-success m-4">Create</button></a>
+    <h1 class="p-2">List Customers</h1>
+    <a href="{{ route('admin.gudang.customer.create') }}"><button class="btn btn-success m-4">Create</button></a>
     <thead>
     <tr>
         <th scope="col">#</th>
         <th scope="col">Nama</th>
-        <th scope="col">Jenis</th>
-        <th scope="col">Harga</th>
-        <th scope="col">Stok</th>
+        <th scope="col">Alamat</th>
+        <th scope="col">Detail</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
+    <?php $i=1; ?>
+    @foreach($customer as $data)
     <tr>
-        <th scope="row">1</th>
-        <td>Nama 1</td>
-        <td>Jenis 1</td>
-        <td>Rp. 250.000</td>
-        <td>300</td>
+        <th scope="row">{{ $i++ }}</th>
+        <td>{{ $data->nama }}</td>
+        <td>{{ $data->alamat }}</td>
+        <td>{{ $data->detail }}</td>
         <td>
-            <button class="btn btn-warning">edit</button>
-            <button class="btn btn-primary">show</button>
-            <button class="btn btn-danger">delete</button>
+        <div class="container d-flex">
+                <a href="{{ route('admin.gudang.customer.edit', $data->id) }}"><button class="btn btn-warning mx-2">edit</button></a>
+                <!-- <button class="btn btn-danger">delete</button> -->
+                <a class="bg-dark" href="{{ route('admin.gudang.customer.show', $data->id) }}"
+                class="block rounded-lg shadow-md">
+                <button class="btn btn-primary mx-2">show</button>
+                
+                </a>
+                
+                <form action="{{ route('admin.gudang.customer.destroy', $data->id) }}" method="POST" >
+                    @csrf
+                    @method('DELETE')
+                    
+                    <button type="submit" class="btn btn-danger mx-2">Delete</button>
+                </form>
+            </div>
         </td>
     </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Nama 2</td>
-        <td>Jenis 2</td>
-        <td>Rp. 250.000</td>
-        <td>300</td>
-        <td>
-            <button class="btn btn-warning">edit</button>
-            <button class="btn btn-primary">show</button>
-            <button class="btn btn-danger">delete</button>
-        </td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Nama 3</td>
-        <td>Jenis 3</td>
-        <td>Rp. 250.000</td>
-        <td>300</td>
-        <td>
-            <button class="btn btn-warning">edit</button>
-            <button class="btn btn-primary">show</button>
-            <button class="btn btn-danger">delete</button>
-        </td>
-    </tr>
+    @endforeach
     
     </tbody>
 </table>

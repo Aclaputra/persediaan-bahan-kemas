@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('surat_persetujuans', function (Blueprint $table) {
             $table->id();
             // $table->string('kd_customer');
-            $table->string('kd_customer');
-            $table->foreign('kd_customer')->references('kd_customer')->on('data_customers');
+            $table->unsignedBigInteger('data_customers_id');
+            $table->foreign('data_customers_id')->references('id')->on('data_customers');
             
             $table->string('nama');
             $table->text('detail');
-            $table->timestamps();
+        $table->timestamps();
         });
     }
 

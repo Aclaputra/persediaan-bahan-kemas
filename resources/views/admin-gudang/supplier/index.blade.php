@@ -36,36 +36,33 @@
     </tr>
     </thead>
     <tbody>
+        <!-- foreach supplier -->
+        <?php $i=1; ?>
+    @foreach ($supplier as $data) 
     <tr>
-        <th scope="row">1</th>
-        <td>Nama 1</td>
-        <td>Detail 1</td>
+        <th scope="row">{{ $i++ }}</th>
+        <td>{{ $data->nama_supplier }}</td>
+        <td>{{ $data->detail }}</td>
         <td>
-            <button class="btn btn-warning">edit</button>
-            <button class="btn btn-primary">show</button>
-            <button class="btn btn-danger">delete</button>
+            <div class="container d-flex">
+                <a href="{{ route('admin.gudang.supplier.edit', $data->id) }}"><button class="btn btn-warning mx-2">edit</button></a>
+                <!-- <button class="btn btn-danger">delete</button> -->
+            <a class="bg-dark" href="{{ route('admin.gudang.supplier.show', $data->id) }}"
+                class="block rounded-lg shadow-md">
+                <button class="btn btn-primary mx-2">show</button>
+                
+                </a>
+                
+                <form action="{{ route('admin.gudang.supplier.destroy', $data->id) }}" method="POST" >
+                    @csrf
+                    @method('DELETE')
+                    
+                    <button type="submit" class="btn btn-danger mx-2">Delete</button>
+                </form>
+            </div>
         </td>
     </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Nama 2</td>
-        <td>Detail 2</td>
-        <td>
-            <button class="btn btn-warning">edit</button>
-            <button class="btn btn-primary">show</button>
-            <button class="btn btn-danger">delete</button>
-        </td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Nama 3</td>
-        <td>Detail 3</td>
-        <td>
-            <button class="btn btn-warning">edit</button>
-            <button class="btn btn-primary">show</button>
-            <button class="btn btn-danger">delete</button>
-        </td>
-    </tr>
+    @endforeach
     
     </tbody>
 </table>

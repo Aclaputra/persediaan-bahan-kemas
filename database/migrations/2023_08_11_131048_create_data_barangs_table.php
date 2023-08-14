@@ -23,7 +23,7 @@ return new class extends Migration
                 'masuk',
                 'keluar'
             ]);
-            $table->string('nama');
+            $table->string('nama_barang');
             $table->string('harga');
             $table->integer('stok');
             $table->timestamps();

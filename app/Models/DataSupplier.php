@@ -12,8 +12,7 @@ class DataSupplier extends Model
     protected $table = 'data_suppliers';
 
     protected $fillable = [
-        'kd_supplier',
-        'nama',
+        'nama_supplier',
         'detail',
     ];
 }

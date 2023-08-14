@@ -1,57 +1,23 @@
 @extends('../layouts.app.v2-admin')
 
 @section('content')
-<div class="container d-flex">
-    <h1>keluar</h1>
-    <div class="container bg-secondary rounded row m-4">
-        <div class="p-2 row">
-            <span class="fw-bold fs-5">Total Bahan Kemas</span>
-            <span>100</span>
-        </div>
-
-    </div>
-    <div class="container bg-secondary rounded row m-4">
-        <div class="p-2 row">
-            <span class="fw-bold fs-5">Total Bahan Kemas</span>
-            <span>100</span>
-        </div>
-
-    </div>
-    <div class="container bg-secondary rounded row m-4">
-        <div class="p-2 row">
-            <span class="fw-bold fs-5">Total Bahan Kemas</span>
-            <span>100</span>
-        </div>
-    </div>
-</div>
 
 <table class="table text-light">
+    <h1 class="m-4">Detail Supplier</h1>
     <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Nama</th>
+        <th scope="col">Detail</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <!-- <th scope="row">1</th> -->
+        <td>{{ $supplier->nama_supplier }}</td>
+        <td>{{ $supplier->detail }}</td>
     </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-    </tr>
+    
     </tbody>
 </table>
 @endsection

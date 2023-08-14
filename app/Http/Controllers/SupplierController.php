@@ -37,12 +37,12 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
+            'nama_supplier' => 'required',
             'detail' => 'required',
         ]);
 
         $barang_masuk = new DataSupplier();
-        $barang_masuk->nama = $validatedData['nama'];
+        $barang_masuk->nama_supplier = $validatedData['nama_supplier'];
         $barang_masuk->detail = $validatedData['detail'];
         $barang_masuk->save();
 
@@ -73,14 +73,14 @@ class SupplierController extends Controller
     public function update(Request $request, DataSupplier $dataSupplier)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
+            'nama_supplier' => 'required',
             'harga' => 'required',
             'jenis' => 'required',
             'stok' => 'required',
         ]);
 
         $barang_masuk = DataBarang::findOrFail($id);
-        $barang_masuk->nama = $validatedData['nama'];
+        $barang_masuk->nama_supplier = $validatedData['nama_supplier'];
         $barang_masuk->harga = $validatedData['harga'];
         $barang_masuk->jenis = $validatedData['jenis'];
         $barang_masuk->stok = $validatedData['stok'];

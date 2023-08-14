@@ -10,24 +10,19 @@
 
     </div> -->
     
-    <form class="bg-secondary rounded p-4" >
-        <h1>Input Barang Keluar</h1>
+    <form action="{{ route('admin.gudang.supplier.update', $supplier->id) }}" class="bg-secondary rounded p-4" method="POST">
+        @csrf  
+      @method('PUT')
+        <h1>Edit Supplier</h1>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nama</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" name="nama_supplier" value="{{ $supplier->nama_supplier }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Jenis</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="exampleInputEmail1" class="form-label">Detail</label>
+        <input type="text" name="detail" value="{{ $supplier->detail }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Harga</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Stok</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
+      
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

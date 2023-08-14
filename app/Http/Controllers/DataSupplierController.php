@@ -30,22 +30,22 @@ class DataSupplierController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
+            'nama_supplier' => 'required',
             'detail' => 'required',
         ]);
 
-        $barang_masuk = new DataSupplier();
-        $barang_masuk->nama = $validatedData['nama'];
-        $barang_masuk->detail = $validatedData['detail'];
-        $barang_masuk->save();
+        $supplier = new DataSupplier();
+        $supplier->nama_supplier = $validatedData['nama_supplier'];
+        $supplier->detail = $validatedData['detail'];
+        $supplier->save();
 
-        return redirect()->route('admin.gudang.supplier.index')->with('success', 'Barang Masuk Created Successfully');
+        return redirect()->route('admin.gudang.supplier.index')->with('success', 'Supplier Created Successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(String $id)
+    public function show(DataSupplier $supplier, String $id)
     {
         $supplier = DataSupplier::findOrFail($id);
         return view('admin-gudang.supplier.show', compact('supplier'));
@@ -54,42 +54,41 @@ class DataSupplierController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(String $id)
+    public function edit(DataSupplier $supplier, string $id)
     {
         $supplier = DataSupplier::findOrFail($id);
+        // dd($supplier);
         return view('admin-gudang.supplier.edit', compact('supplier'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DataSupplier $dataSupplier)
+    public function update(Request $request, string $id)
     {
+        // dd($id);
         $validatedData = $request->validate([
-            'nama' => 'required',
-            'harga' => 'required',
-            'jenis' => 'required',
-            'stok' => 'required',
+            'nama_supplier' => 'required',
+            'detail' => 'required',
         ]);
 
-        $barang_masuk = DataBarang::findOrFail($id);
-        $barang_masuk->nama = $validatedData['nama'];
-        $barang_masuk->harga = $validatedData['harga'];
-        $barang_masuk->jenis = $validatedData['jenis'];
-        $barang_masuk->stok = $validatedData['stok'];
-        $barang_masuk->save();
+        $supplier = DataSupplier::findOrFail($id);
+        // dd($supplier);
+        $supplier->nama_supplier = $validatedData['nama_supplier'];
+        $supplier->detail = $validatedData['detail'];
+        $supplier->save();
 
-        return redirect()->route('admin.gudang.masuk.index')->with('success', 'barang masuk updated successfully');
+        return redirect()->route('admin.gudang.supplier.index')->with('success', 'Supplier updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DataSupplier $dataSupplier)
+    public function destroy(DataSupplier $dataSupplier, String $id)
     {
-        $barang_masuk = DataBarang::findOrFail($id);
-        $barang_masuk->delete();
+        $supplier = DataSupplier::findOrFail($id);
+        $supplier->delete();
 
-        return redirect()->route('admin.gudang.masuk.index')->with('success', 'barang masuk deleted successfully');
+        return redirect()->route('admin.gudang.supplier.index')->with('success', 'Supplier deleted successfully');
     }
 }

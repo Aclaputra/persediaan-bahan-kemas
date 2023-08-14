@@ -10,15 +10,16 @@
 
     </div> -->
     
-    <form class="bg-secondary rounded p-4" >
-        <h1>Input Supplier</h1>
+    <form action="{{ route('admin.gudang.supplier.store')}}" method="POST" class="bg-secondary rounded p-4" >
+      @csrf  
+      <h1>Input Supplier</h1>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nama</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" name="nama_supplier" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Detail</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" name="detail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

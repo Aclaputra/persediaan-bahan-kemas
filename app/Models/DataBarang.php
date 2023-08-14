@@ -12,8 +12,8 @@ class DataBarang extends Model
     protected $table = 'data_barangs';
 
     protected $fillable = [
-        'kd_supplier',
-        'nama',
+        'data_suppliers_id',
+        'nama_barang',
         'jenis',
         'jalur',
         'harga',

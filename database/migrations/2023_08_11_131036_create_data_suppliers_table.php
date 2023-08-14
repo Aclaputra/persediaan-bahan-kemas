@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('data_suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama_supplier');
             $table->text('detail');
             $table->timestamps();
         });
